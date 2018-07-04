@@ -1,0 +1,93 @@
+            <script src="https://code.jquery.com/jquery.js"></script>
+                <!-- Importo el archivo Javascript de Highcharts directamente desde su servidor -->
+            <script src="http://code.highcharts.com/highcharts.js"></script>
+            <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here  los archivos quedan guardados en public/javascript/assets/plugins/jquery.filer/uploads--> 
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Estadistica</h4>
+                                    <ol class="breadcrumb p-0">
+                                        <li>
+                                            <a href="#">ATL-FOREIA</a>
+                                        </li>
+                                        <li class="active">
+                                            Estadistica
+                                        </li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                       
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box table-responsive">
+                                    <h4 class="m-t-0 header-title"><b>Porcentaje </b></h4>
+                                    <p class="text-muted font-13 m-b-30">
+                                        Muestra la proporcion de cada variable en el total de los registros tabulados.
+                                    </p>
+                                    <div id="contenedor" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>    
+                                        <script type="text/javascript">
+                                            Highcharts.chart('contenedor', {
+                                                chart: {
+                                                    type: 'pie',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 45,
+                                                        beta: 0
+                                                    }
+                                                },
+                                                title: {
+                                                    text: '<?php echo $strcategoria ?>'
+                                                },
+                                                tooltip: {
+                                                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                                                },
+                                                plotOptions: {
+                                                    pie: {
+                                                        allowPointSelect: true,
+                                                        cursor: 'pointer',
+                                                        depth: 35,
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            format: '{point.name}'
+                                                        }
+                                                    }
+                                                },
+                                                series: [{
+                                                    type: 'pie',
+                                                    name: 'Casos gestionados',
+                                                    data: [
+                                                        <?php echo $strdatos ?>
+                                                    ]
+                                                }]
+                                            });
+                                    </script>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>   
+                         <div class="row">
+                            <div class="col-sm-12">
+                                
+                            </div>
+                            
+                        </div>
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+            </div><!-- End content-page -->

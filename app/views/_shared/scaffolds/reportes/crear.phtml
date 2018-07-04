@@ -1,0 +1,58 @@
+
+<!-- ============================================================== -->
+<!-- Start right Content here  los archivos quedan guardados en public/javascript/assets/plugins/jquery.filer/uploads--> 
+<!-- ============================================================== -->
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Dispositivo Medico</h4>
+                        <ol class="breadcrumb p-0">
+                            <li>
+                                <a href="#">ATL-FOREIA</a>
+                            </li>
+                            <li class="active">
+                                Dispositivo medico
+                            </li>
+                        </ol>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+
+                        <h4 class="header-title m-t-0 m-b-30">Datos del dispositivo medico asociado</h4>
+
+                        <div class="row">
+
+                            <?php // Tag::css('scaffold') ?>
+                            <div id="scaffold">
+                            <?php View::content();?>
+                            <h1><?= ucwords("$model"), ": <span>$action_name</span>" ?></h1>
+
+                            <div class="col-8 offset-2">
+                            <?php ModelForm::create($$model)?>
+                            </div>
+
+                            <div class="col-12">
+                                    <a href="../" class="btn btn-default">Listado</a>
+                            </div>
+                            <?php //View::partial('editors/tinymce') // ya veremos si incluimos algun wysiwyg?>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

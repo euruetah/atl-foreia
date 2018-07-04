@@ -1,0 +1,42 @@
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+		<div class="col-xs-12">
+                    <div class="page-title-box">
+                        <?php 
+                            $ips = Load::model('ips');
+                            $nomips = $ips->find(Session::get('ips'))->nombreips;
+                            switch (Session::get('rol')) {
+                                case 'A':
+                                    $nomrol='Administrador';
+                                case 'U':
+                                    $nomrol='Usuario IPS';    
+                                    break;
+                                default:
+                                    break;
+                            }
+                        ?>
+                        <h4 class="page-title">Dashboard - <?php echo $nomips." -".$nomrol ?></h4>
+                        <ol class="breadcrumb p-0">
+                            <li>
+                                <a href="#">Eventos adversos</a>
+                            </li>
+
+                            <li class="active">
+                                Dashboard
+                            </li>
+                        </ol>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+        </div>
+            
+</div>
+    
+        <!-- Jquery filer js -->
+        <?php echo Tag::js('assets/plugins/jquery.filer/js/jquery.filer.min') ?>
+        <!-- page specific js -->
+        <?php echo Tag::js('assets/pages/jquery.fileuploads.init') ?>

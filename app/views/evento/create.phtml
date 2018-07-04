@@ -1,0 +1,130 @@
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here  los archivos quedan guardados en public/javascript/assets/plugins/jquery.filer/uploads--> 
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Evento Adverso</h4>
+                                    <ol class="breadcrumb p-0">
+                                        <li>
+                                            <a href="#">ATL-FOREIA</a>
+                                        </li>
+                                        <li class="active">
+                                            Evento
+                                        </li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                         <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+
+                                    <h4 class="header-title m-t-0 m-b-30">Datos Basicos</h4>
+
+                                    <div class="row">
+                                        <?php echo Form::open('evento/create'); ?>
+                                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+                                           
+                                                <fieldset disabled>
+                                                    <label for="disabledSelect">Paciente</label>
+                                                     <?php echo Form::dbSelect('evento.paciente_id',null,null,null,'class="form-control" ') ?>
+                                                    <small class="text-muted">Digite la Identificacion del Paciente
+                                                    </small>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label >Fecha del Evento</label>
+                                                    <?php echo Form::date('evento.fecha_at', 'class="form-control" ') ?>
+                                                </fieldset>
+                                                <fieldset disabled>
+                                                    <label for="disabledSelect">IPS</label>
+                                                    <?php echo Form::dbselect('evento.ips_id','nombreips',Array('ips','listadoips'), 'Seleccione una ','class="form-control"') ?>
+                                                </fieldset>
+                                                <fieldset >
+                                                    <label for="disabledSelect">Dispositivo Medico Involucrado</label>
+                                                    <?php echo Form::dbselect('evento.dispmed_id',null,null, 'Seleccione una ','class="form-control"') ?>
+                                                </fieldset>
+                                                
+                                                
+                                                <fieldset class="form-group">
+                                                    <div class="row">
+                                                        
+                                                        <div class="col-xs-4">
+                                                            <label>Servicio</label>
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                             <label>Cama</label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        
+                                                        <div class="col-xs-4">
+                                                            <?php echo Form::text('evento.servicio', 'class="form-control" ') ?>
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                             <?php echo Form::text('evento.cama', 'class="form-control" ') ?>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </fieldset>
+                                                
+
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+<!--                                            </form>-->
+                                        </div><!-- end col -->
+
+                                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-6 m-t-sm-40">
+<!--                                            <form>-->
+                                                <fieldset class="form-group">
+                                                    <label >Deteccion del evento</label>
+                                                    <?php echo Form::dbselect('evento.deteccion_id',null,null,null,'class="form-control"') ?>
+<!--                                                    <input class="form-control" type="text" placeholder="Readonly input here…" readonly>-->
+                                                </fieldset>
+ 
+                                                <fieldset class="form-group">
+                                                    <label >Clasificacion</label>
+                                                     <?php echo Form::dbselect('evento.clasificacion_id',null,null, 'Seleccione una ','class="form-control"') ?>
+                                                    <small class="text-muted">Seleccione cuando fue detectado el evento o incidente
+                                                    </small>
+                                                </fieldset>
+                                                <fieldset>
+                                                    <label >Descripcion</label>
+                                                    <?php echo Form::textarea('evento.descripcion', 'class="form-control" ') ?>
+<!--                                                    <input class="form-control form-control-lg m-b-20" type="text"
+                                                           placeholder=".form-control-lg">-->
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label >Desenlace</label>
+                                                     <?php echo Form::dbselect('evento.desenlace_id',null,null, 'Seleccione una ','class="form-control"') ?>
+                                                    <small class="text-muted">Seleccione cuando fue detectado el evento o incidente
+                                                    </small>
+                                                </fieldset>
+
+                                                
+                                            
+                                        </div><!-- end col -->
+                                        </form>
+                                    </div><!-- end row -->
+                                </div>
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+            </div>
+            <!-- End content-page -->

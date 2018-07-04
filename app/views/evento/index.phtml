@@ -1,0 +1,67 @@
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Configuracion</h4>
+                        <ol class="breadcrumb p-0">
+                            <li>
+                                <a href="#">Tablas</a>
+                            </li>
+                            <li class="active">
+                                <?= ucwords("$model"); ?>
+                            </li>
+                        </ol>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div id="scaffold" class="card-box table-responsive">
+                    <?php View::content()?>
+                    <h1><?= ucwords("$model"), ": <span>$action_name</span>" ?></h1>
+                    <div class="actions">
+                        <?= Html::linkAction("crear/", 'Crear registro', 'class="btn btn-primary"')?>
+                    </div>
+                    <?php if ($data->items) : ?>
+                    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                            <?php foreach (current($data->items)->fields as $field) : ?>
+                                <th><?= (current($data->items)->get_alias($field))?></th>
+                            <?php endforeach?>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                            <?php foreach ($data->items as $item) : ?>
+                                <tr>
+                                    <?php foreach ($item->fields as $field) : ?>
+                                    <td><?= h($item->$field)?></td>
+                                    <?php endforeach?>
+                                    <td><?= Html::linkAction("ver/$item->id", 'Ver')?> |
+                                    <?= Html::linkAction("editar/$item->id", 'Editar')?> |
+                                    <?= Html::linkAction("borrar/$item->id", 'Borrar', 'onclick="return confirm(\'¿Está seguro?\')"') ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach?>
+                            </tbody>
+                    </table>
+                    <?php View::partial('paginators/digg', false, array('page' => $data ,'url' => Router::get('controller_path').'/index')) ?>
+
+                    <?php else : // Si no hay items?>
+                    <h2>No hay ningún registro</h2>
+                    <?php endif ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here  los archivos quedan guardados en public/javascript/assets/plugins/jquery.filer/uploads--> 
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Gestion</h4>
+                                    <ol class="breadcrumb p-0">
+                                        <li>
+                                            <a href="#">ATL-FOREIA</a>
+                                        </li>
+                                        <li class="active">
+                                            Gestion
+                                        </li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+
+                                    <h4 class="header-title m-t-0 m-b-30">Gestion realizada</h4>
+
+                                    <div class="row">
+                                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+                                            <?php echo Form::open(); ?>
+                                            <fieldset class="form-group">
+                                                <label >Evento</label>
+                                                 <?php echo Form::dbSelect('gestion.evento_id', null,null,null,'class="form-control"') ?>                                                   
+                                                </small>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label >Causa</label>
+                                                 <?php echo Form::dbSelect('gestion.causa_id', 'termcausa',null,null,'class="form-control"') ?>                                                   
+                                                </small>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                    <label >Accion</label>
+                                                     <?php echo Form::text('gestion.accion', 'class="form-control" ') ?>
+                                                    <small class="text-muted">Digite la accion realizada
+                                                    </small>
+                                            </fieldset>
+                                            
+                                            <fieldset class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <label >Se reporto al distribuidor?</label>
+                                                        <div class="form-check form-check-inline">
+                                                          <label class="form-check-label">
+                                                              <?php echo Form::radio('gestion.reportodist',1) ?>
+                                                              Si se reporto
+                                                          </label>
+        <!--                                                        </div>
+                                                        <div class="form-check form-check-inline">-->
+                                                          <label class="form-check-label">
+                                                            <?php echo Form::radio('gestion.reportodist',2 ) ?>
+                                                              No se reporto
+                                                          </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <label >Fecha Reportado</label>
+                                                         <?php echo Form::date('gestion.fecharepd_at') ?>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                                
+                                                                                              
+                                                
+<!--                                            </form>-->
+                                        </div><!-- end col -->
+
+                                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-6 m-t-sm-40">
+<!--                                            <form>-->
+                                               
+                                            <fieldset class="form-group">
+                                                <label >Disponible para evaluacion?</label>
+                                                    <div class="form-check form-check-inline">
+                                                      <label class="form-check-label">
+                                                          <?php echo Form::radio('gestion.dispeval',1) ?>
+                                                          Si esta dispobnible
+                                                      </label>
+<!--                                                        </div>
+                                                    <div class="form-check form-check-inline">-->
+                                                      <label class="form-check-label">
+                                                        <?php echo Form::radio('gestion.dispeval',2 ) ?>
+                                                          No esta disponible
+                                                      </label>
+                                                    </div>
+
+                                            </fieldset>    
+                                            <fieldset class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <label >Se envio al distribuidor?</label>
+                                                        <div class="form-check form-check-inline">
+                                                          <label class="form-check-label">
+                                                              <?php echo Form::radio('gestion.enviodisp',1) ?>
+                                                              Si se envio
+                                                          </label>
+        <!--                                                        </div>
+                                                        <div class="form-check form-check-inline">-->
+                                                          <label class="form-check-label">
+                                                            <?php echo Form::radio('gestion.enviodisp',2 ) ?>
+                                                              No se envio
+                                                          </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <label >Fecha Envio</label>
+                                                         <?php echo Form::date('gestion.fechaenviod_at','class="form-control"') ?>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                                
+                                                <?php echo Form::submit('Continuar','type="submit" class="btn btn-primary"') ?>
+<!--                                                <button type="submit" class="btn btn-primary">Continuar</button>-->
+                                            </form>
+                                        </div><!-- end col -->
+
+                                    </div><!-- end row -->
+                                </div>
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+            </div>
+            <!-- End content-page -->

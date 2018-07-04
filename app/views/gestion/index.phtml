@@ -1,0 +1,81 @@
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here  los archivos quedan guardados en public/javascript/assets/plugins/jquery.filer/uploads--> 
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Dispositivos Medicos</h4>
+                                    <ol class="breadcrumb p-0">
+                                        <li>
+                                            <a href="#">ATL-FOREIA</a>
+                                        </li>
+                                        <li class="active">
+                                            Campana
+                                        </li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box table-responsive">
+                                    <h4 class="m-t-0 header-title"><b>Listado de eventos gestionados</b></h4>
+                                    <p class="text-muted font-13 m-b-30">
+                                        Reporte de casos gestionados por la IPS, se puede realizar consultas y generar reportes en los distintos formatos (pdf, excel, csv)
+                                    </p>
+                                    <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="4"><?php echo Html::img('logoatlantico.png', null, 'width="80%" height="80%"')?></th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <th colspan="7" ><h1 >Formato Campana</h1></th>
+                                            </tr>
+                                            <tr>
+                                                <th>Fecha</th>
+                                                <th>Hora</th>
+                                                <th>Cama</th>
+                                                <th>Documento Paciente</th>
+                                                <th>Dispositivo Medico Involucrado</th>
+                                                <th>Evento o Incidente</th>
+                                                <th>Reportado por</th>   
+                                                <th> <?php echo $numeroreg ?>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($listaCampana->items as $item): ?>
+                                                <tr class="gradeC">
+                                                    <td><?php echo $item->fecha_at ?></td>
+                                                    <td><?php echo $item->servicio ?></td>
+                                                    <td><?php echo $item->cama ?></td>
+                                                    <td><?php echo $item->identificacion ?></td>
+                                                    <td><?php echo $item->generico ?></td>
+                                                    <td><?php echo $item->descripcion ?></td>
+                                                    <td><?php echo $item->nombre ?></td>
+<!--                                                    <td><?php echo Html::linkAction("modificar/$item->id/", 'Editar') ?>
+                                                        <?php echo Html::linkAction("del/$item->id/", 'Borrar') ?>      
+                                                    </td>-->
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> <!-- end row -->
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+            </div><!-- End content-page -->

@@ -1,0 +1,138 @@
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here  los archivos quedan guardados en public/javascript/assets/plugins/jquery.filer/uploads--> 
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Dispositivo Medico</h4>
+                                    <ol class="breadcrumb p-0">
+                                        <li>
+                                            <a href="#">ATL-FOREIA</a>
+                                        </li>
+                                        <li class="active">
+                                            Dispositivo medico
+                                        </li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+
+                                    <h4 class="header-title m-t-0 m-b-30">Datos del dispositivo medico asociado</h4>
+
+                                    <div class="row">
+                                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-6">
+                                            <?php echo Form::open('dispmed/create'); ?>
+                                                <fieldset class="form-group">
+                                                    <label >Nombre generico</label>
+                                                     <?php echo Form::text('dispmed.generico', 'class="form-control" ') ?>
+                                                    <small class="text-muted">Digite el nombre generico del dispositivo medico
+                                                    </small>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label >Nombre Comercial</label>
+                                                     <?php echo Form::text('dispmed.comercial', 'class="form-control" ') ?>
+                                                    <small class="text-muted">Digite el nombre comercial del dispositivo medico
+                                                    </small>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                        <label >Registro Sanitario</label>
+                                                         <?php echo Form::text('dispmed.regsanitario', 'class="form-control"  placeholder="Reg Invima"') ?>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                        <label >Lote</label>
+                                                         <?php echo Form::text('dispmed.lote', 'class="form-control"  placeholder="Lote"') ?>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                
+                                                <fieldset class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-xs-4">
+                                                            <label >Modelo</label>
+                                                            <?php echo Form::text('dispmed.modelo', 'class="form-control" ') ?>
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                            <label >Referencia</label>
+                                                             <?php echo Form::text('dispmed.referencia', 'class="form-control" ') ?>
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                            <label >Serial</label>
+                                                            <?php echo Form::text('dispmed.serial', 'class="form-control" ') ?>
+                                                        </div>
+                                                </fieldset>                                                
+                                                
+<!--                                            </form>-->
+                                        </div><!-- end col -->
+
+                                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-6 m-t-sm-40">
+<!--                                            <form>-->
+                                               
+                                                <fieldset class="form-group">
+                                                    <label >Fabricante</label>
+                                                     <?php echo Form::text('dispmed.fabricante', 'class="form-control" ') ?>
+                                                    <small class="text-muted">Digite la razon social del Fabricante
+                                                    </small>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label >Distribuidor</label>
+                                                     <?php echo Form::text('dispmed.distribuidor', 'class="form-control" ') ?>
+                                                    <small class="text-muted">Digite la razon social del Vendedor o distribuidor
+                                                    </small>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label >Area funcional</label>
+                                                     <?php echo Form::text('dispmed.areafunc', 'class="form-control" ') ?>
+                                                    <small class="text-muted">Digite la razon social del Fabricante
+                                                    </small>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label >El Dispositivo medico es Nuevo?</label>
+                                                    
+                              
+                                                        <div class="form-check form-check-inline">
+                                                          <label class="form-check-label">
+                                                              <?php echo Form::radio('dispmed.usado',1) ?>
+                                                              Nuevo
+                                                          </label>
+<!--                                                        </div>
+                                                        <div class="form-check form-check-inline">-->
+                                                          <label class="form-check-label">
+                                                            <?php echo Form::radio('dispmed.usado',2 ) ?>
+                                                              Usado
+                                                          </label>
+                                                        </div>
+                                                    
+                                                </fieldset>
+                                                <?php echo Form::submit('Continuar','type="submit" class="btn btn-primary"') ?>
+<!--                                                <button type="submit" class="btn btn-primary">Continuar</button>-->
+                                            </form>
+                                        </div><!-- end col -->
+
+                                    </div><!-- end row -->
+                                </div>
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+            </div>
+            <!-- End content-page -->
